@@ -51,7 +51,6 @@ router.get('/api/v1/:model/:id', handleGetOne);
 /**
  * Modifies of records for model provided
  * @route PUT /{model}/{id}
- * @consumes
  * @param {string} model.path.required - Resource model name
  * @param {number} id.path.required - Resource model name
  * @returns {Object} 500 - Server error

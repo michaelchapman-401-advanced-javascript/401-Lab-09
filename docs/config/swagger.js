@@ -1,10 +1,6 @@
 'use strict';
 
-const express = require('express');
-const app = express();
-const expressSwagger = require('express-swagger-generator')(app);
-
-let options = {
+module.exports = {
   swaggerDefinition: {
     info: {
       description: 'API Server',
@@ -15,7 +11,7 @@ let options = {
     produces: [
       'application/json',
     ],
-    host: 'localhost:3000',
+    host: 'localhost:3001',
     schemes: ['http'],
     securityDefinitions: {
       basicAuth: {
@@ -24,9 +20,5 @@ let options = {
     },
   },
   basedir: __dirname,
-  files: [`../../src/api/*.js`],
+  files: ['../../src/api/v1.js'],
 };
-
-expressSwagger(options);
-
-app.listen(3300, () => console.log('swagger listening'));
